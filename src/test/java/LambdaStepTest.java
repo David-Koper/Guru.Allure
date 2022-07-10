@@ -8,6 +8,8 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
+import static org.openqa.selenium.By.linkText;
+import static org.openqa.selenium.By.partialLinkText;
 
 public class LambdaStepTest {
 
@@ -16,12 +18,12 @@ public class LambdaStepTest {
 
     @Test
     public void testGitHubIssueSearch() {
-        //SelenideLogger.addListener("allure",new AllureSelenide());
+    SelenideLogger.addListener("allure",new AllureSelenide());
 
         step("Открываем главную страницу", () -> {
-            open("https://github.com/");});
+            open("https://github.com");});
 
-        step("Ищем репозиторий по имени" + Repository, () -> {
+        step("ищем репозиторий по имени " + Repository, () -> {
             $(".js-site-search-form").click();
             $(".input-sm").sendKeys(Repository);
             $(".input-sm").submit();});
