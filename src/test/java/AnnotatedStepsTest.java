@@ -6,8 +6,8 @@ import static io.qameta.allure.Allure.step;
 import static java.nio.charset.StandardCharsets.UTF_8;
 public class AnnotatedStepsTest {
 
-    private final String Repository = "eroshenkoam/allure-example";
-    private final Integer Issue_Number = 76;
+    private final String REPOSITORY = "eroshenkoam/allure-example";
+    private final Integer ISSUE_NUMBER = 76;
 
     @Test
 
@@ -16,10 +16,10 @@ public class AnnotatedStepsTest {
         WebSteps steps = new WebSteps();
 
         steps.openpage();
-        steps.searchRepository(Repository);
-        steps.openRepositoryLink(Repository);
+        steps.searchRepository(REPOSITORY);
+        steps.openRepositoryLink(REPOSITORY);
         steps.openIssuesTab();
-        steps.shouldSeeIssueWithNumber(Issue_Number);
+        steps.shouldSeeIssueWithNumber(ISSUE_NUMBER);
 
     }
 }
