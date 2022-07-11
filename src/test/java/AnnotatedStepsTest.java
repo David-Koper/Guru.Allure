@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
+import static java.nio.charset.StandardCharsets.UTF_8;
 public class AnnotatedStepsTest {
 
     private final String Repository = "eroshenkoam/allure-example";

@@ -3,7 +3,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -23,7 +23,7 @@ public class LambdaStepTest {
         step("Открываем главную страницу", () -> {
             open("https://github.com");});
 
-        step("ищем репозиторий по имени " + Repository, () -> {
+        step("Ищем репозиторий по имени " + Repository, () -> {
             $(".js-site-search-form").click();
             $(".input-sm").sendKeys(Repository);
             $(".input-sm").submit();});

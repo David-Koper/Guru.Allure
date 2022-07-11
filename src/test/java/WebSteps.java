@@ -19,7 +19,7 @@ public class WebSteps {
     public void openpage() {
         open("https://github.com");
     }
-    @Step("ищем репозиторий по имени {repository}")
+    @Step("Ищем репозиторий по имени {repository}")
     public void searchRepository(String repository) {
         $(".js-site-search-form").click();
         $(".input-sm").sendKeys(repository);
