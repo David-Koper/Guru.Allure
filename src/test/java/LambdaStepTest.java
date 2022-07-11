@@ -13,8 +13,8 @@ import static org.openqa.selenium.By.partialLinkText;
 
 public class LambdaStepTest {
 
-    private final String Repository = "eroshenkoam/allure-example";
-    private final Integer Issue_Number = 76;
+    private final String REPOSITORY = "eroshenkoam/allure-example";
+    private final Integer ISSUE_NUMBER = 76;
 
     @Test
     public void testGitHubIssueSearch() {
@@ -23,19 +23,19 @@ public class LambdaStepTest {
         step("Открываем главную страницу", () -> {
             open("https://github.com");});
 
-        step("Ищем репозиторий по имени " + Repository, () -> {
+        step("Ищем репозиторий по имени " + REPOSITORY, () -> {
             $(".js-site-search-form").click();
-            $(".input-sm").sendKeys(Repository);
+            $(".input-sm").sendKeys(REPOSITORY);
             $(".input-sm").submit();});
 
-        step("В результатах поиска переходим по ссылке репозитория " + Repository, () -> {
+        step("В результатах поиска переходим по ссылке репозитория " + REPOSITORY, () -> {
             $(By.linkText("eroshenkoam/allure-example")).click();});
 
         step("Открываем таб Issues", () -> {
         $(By.partialLinkText("Issues")).click();});
 
-        step("Проверяем что существует Issue c номером " + Issue_Number, () -> {
-        $(withText("#" + Issue_Number)).should(Condition.exist);});
+        step("Проверяем что существует Issue c номером " + ISSUE_NUMBER, () -> {
+        $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);});
 
 
     }
